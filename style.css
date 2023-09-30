@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+:root {
+
+    /* (main background) */
+--Very-dark-blue: hsl(233, 47%, 7%);
+
+    /* (card background) */
+--Dark-desaturated-blue: hsl(244, 38%, 16%);
+
+    /* (accent) */
+--Soft-violet: hsl(277, 64%, 61%);
+
+    /* (main heading, stats) */
+--White: hsl(0, 0%, 100%);
+
+/* (main paragraph) */
+--Slightly-transparent-white : hsla(0, 0%, 100%, 0.75);
+
+/* (stat headings) */
+--Slightly-transparent-white : hsla(0, 0%, 100%, 0.6);
+
+
+--Font-Inter: 'Inter', sans-serif;
+--Font-Lexend-Deca: 'Lexend Deca', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--Very-dark-blue);
+    color: var(--White);
+    font-family: var(--Font-Inter);
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.statusCard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: var(--Dark-desaturated-blue);
+    width: 56rem;
+    margin: 10rem auto;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.statusCard__img {
+    order: 2;
+    position: relative;
+}
+
+.statusCard__img::before {
+    position: absolute;
+    content: "";
+    background: linear-gradient(hsla(277, 64%, 61%,.4), hsla(277, 64%, 61%, .5));
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 28rem;
+}
+
+.statusCard__content {
+    margin: 3rem 3rem 3rem 3rem;
+}
+.statusCard__title {
+    font-size: 1.9rem;
+}
+
+.statusCard__title > span {
+    color: var(--Soft-violet);
+}
+
+.statusCard__para {
+    margin: 2rem 0rem 4rem 0;
+    padding-right: 2.5rem;
+    
+    font-size: .8rem;
+    line-height: 1.3rem;
+}
+
+:is(.statusCard__content, .statusCard__insights) p, .statusCard__para {
+    color: var(--Slightly-transparent-white);
+}
+
+.statusCard__insights {
+    display: flex;
+    gap: 3.2rem;
+    font-size: 1.2rem;
+}
+
+.statusCard__insights p {
+    text-transform: uppercase;
+    font-family: var(--Font-Lexend-Deca);
+    margin-top: .3rem;
+    font-size: .6rem;
+    letter-spacing: 1px;
+}
+
+/* ===============
+    Media Query
+================ */
+
+@media screen and (max-width: 30em) {
+    .statusCard {
+        grid-template-columns: 1fr;
+        width: 85%;
+        margin: 4rem auto ;
+        /* justify-content: center; */
+    }
+
+    .statusCard__img {
+        order: 0;
+        
+    }
+
+    .statusCard__img img {
+        content: url(./images/image-header-mobile.jpg);
+        width: 100%;
+    }
+
+    .statusCard__content {
+        text-align: center;
+        margin: 1.8rem 1.5rem;
+    }
+
+    .statusCard__title {
+        font-size: 1.5rem;
+    }
+
+    .statusCard__para {
+        padding-right: 0;
+        margin: 1rem 0 2rem;
+    }
+
+    .statusCard__insights {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+}
