@@ -61,6 +61,7 @@ img {
     position: absolute;
     content: "";
     background: linear-gradient(hsla(277, 64%, 61%,.4), hsla(277, 64%, 61%, .5));
+    /* opacity: .5; */
     width: 100%;
     height: 100%;
 }
